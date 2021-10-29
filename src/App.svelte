@@ -1,4 +1,6 @@
 <script>
+	import Header from "./Header.svelte";
+	import Modal from "./Modal.svelte";
 	let name = "sebabrata";
 	let job = "developer";
 	let firstName = "nitish";
@@ -76,6 +78,9 @@
 
 </script>
 
+<!-- header component -->
+<Header/>
+
 <main>
 	<h1>Hello {name}!</h1>
 	<p>you are a {job}</p>
@@ -111,6 +116,10 @@
 		<p>No data found !</p>
 	{/each}
 </main>
+
+<!-- modal component -->
+<Modal/>
+
 
 <style>
 	button{
