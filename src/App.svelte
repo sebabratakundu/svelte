@@ -5,6 +5,7 @@
 	let job = "developer";
 	let firstName = "nitish";
 	let lastName = "kumar";
+	let showModal = false;
 	// funciton
 	// const control = (e)=>{
 	// 	firstName = (e.target.value);
@@ -76,10 +77,15 @@
 		students = students.filter(student => student.id != id);
 	};
 
+	const toggleModal = ()=>{
+		showModal = !showModal;
+	};
 </script>
 
 <!-- header component -->
 <Header/>
+<!-- modal component with props-->
+<Modal title="Add Clients" msg="Please register" {showModal} isPromo={true} on:click={toggleModal} />
 
 <main>
 	<h1>Hello {name}!</h1>
@@ -90,7 +96,10 @@
 	<!-- two way binding -->
 	<input type="text" bind:value={firstName}>
 	<button on:click={changeValue}>Change</button>
+	<br><br>
 
+	<button on:click={toggleModal}>Open Modal</button>
+	<br><br>
 	<!-- loop -->
 	{#each students as student (student.id)}
 		<div class="stu-box">
@@ -117,22 +126,12 @@
 	{/each}
 </main>
 
-<!-- modal component -->
-<Modal/>
-
-
 <style>
 	button{
 		background:purple;
 		color : white;
 		border : none;
 		padding : 8px 15px;
-	}
-
-	.stu-box{
-		margin-bottom: 30px;		
-		padding: 20px;
-		box-shadow: 0 4px 10px #ddd;
 	}
 
 	main {
@@ -149,6 +148,12 @@
 		font-weight: 100;
 	}
 
+	.stu-box{
+		width: 100%;
+		margin-bottom: 30px;		
+		padding: 20px;
+		box-shadow: 0 4px 10px #ddd;
+	}
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
