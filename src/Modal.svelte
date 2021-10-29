@@ -19,7 +19,8 @@
   
       <!-- conditional class -->
       <div class="my-modal-body">
-        {msg}
+        <slot></slot>
+        <!-- <slot name="title"></slot> -->
       </div>
     </div>
   </div>

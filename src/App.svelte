@@ -85,7 +85,22 @@
 <!-- header component -->
 <Header/>
 <!-- modal component with props-->
-<Modal title="Add Clients" msg="Please register" {showModal} isPromo={true} on:click={toggleModal} />
+<Modal title="Add Student" msg="Please register" {showModal} isPromo={true} on:click={toggleModal}>
+	<div style="width: 100%;">
+		<form>
+			<input type="text" placeholder="name" class="form-control mb-4">
+			<input type="number" placeholder="roll" class="form-control mb-4">
+			<input type="number" placeholder="marks" class="form-control mb-4">
+			<input type="text" placeholder="subject" class="form-control mb-4">
+			<button>Submit</button>
+		</form>
+	</div>
+
+	<!-- name slot -->
+	<div slot="title">
+		<!-- <h1>this is named slot</h1> -->
+	</div>
+</Modal>
 
 <main>
 	<h1>Hello {name}!</h1>
